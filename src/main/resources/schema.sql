@@ -1,4 +1,4 @@
-create table "user"
+create table "joojoo_user"
 (
     user_id       uuid                                not null
         constraint user_pk
@@ -8,11 +8,12 @@ create table "user"
     registered_at timestamp default CURRENT_TIMESTAMP not null
 );
 
-alter table "user"
+alter table "joojoo_user"
     owner to jeongyong;
 
-create index user__idx01
-    on "user" (registered_at);
+create index joojoo_user__idx01
+    on "joojoo_user" (registered_at);
+create index joojoo_user__idx02 on "joojoo_user" (username);
 
 create table otp
 (
@@ -29,3 +30,5 @@ alter table otp
 
 create index otp__idx01
     on otp (created_at);
+
+create index otp__idx02 on "otp" (username);

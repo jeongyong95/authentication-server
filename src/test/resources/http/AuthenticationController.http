@@ -1,0 +1,26 @@
+### 로그인 - OTP 발급
+POST {{baseUrl}}/api/v1/authentication
+Content-Type: application/json
+
+{
+  "username": "jeongyong95",
+  "password": "950312"
+}
+
+### OTP 인증 - 실패
+POST {{baseUrl}}/api/v1/authentication/otp
+Content-Type: application/json
+
+{
+  "username": "jeongyong95",
+  "code": "123455"
+}
+
+### OTP 인증 - 성공
+POST {{baseUrl}}/api/v1/authentication/otp
+Content-Type: application/json
+
+{
+  "username": "jeongyong95",
+  "code": "762690"
+}
